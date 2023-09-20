@@ -20,3 +20,7 @@ export const InputBox = styled.div`
   width: 60%;
   height: 2rem;
 `;
+
+export const RegisterDiv = styled.div`
+
+`

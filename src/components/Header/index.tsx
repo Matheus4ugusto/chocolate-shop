@@ -3,8 +3,11 @@
 import Link from "next/link";
 import SearchBar from "../searchBar";
 import * as S from "./header.style";
+import { useAuth } from "@/contexts/AuthContext";
+import Button from "../Button";
 
 const Header: React.FC = () => {
+  const { isLoged, user, logOut } = useAuth();
   return (
     <>
       <S.Header>
@@ -15,6 +18,7 @@ const Header: React.FC = () => {
         <S.InputBox>
           <SearchBar />
         </S.InputBox>
+            <Button/>
       </S.Header>
     </>
   );
