@@ -1,7 +1,14 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  color: ${({ theme }) => theme.colors.cream.primary};
+  font-size: 1.25rem;
 `;
 
-export const Span = styled.span``;
+export const Span = styled.span`
+  display: flex;
+`;
+
+export const Div = styled.div`
+  display: flex;
+  align-items: center;
+`;

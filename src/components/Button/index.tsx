@@ -10,16 +10,26 @@ const Button: React.FC = () => {
       <S.Button>
         {isLoged ? (
           <>
-            <Link href="/profile" style={{color: "#F2E0C5"}}>
+            <Link href="/profile" style={{ color: "#F2E0C5" }}>
               {" "}
-              <BiLogIn /> <S.Span>Minha conta</S.Span>{" "}
+              <S.Div>
+                <S.Span>
+                  <BiLogOut />
+                </S.Span>
+                <S.Span>Minha conta</S.Span>{" "}
+              </S.Div>
             </Link>
           </>
         ) : (
           <>
-            <Link href="/login" style={{color: "#F2E0C5"}}>
+            <Link href="/identify" style={{ color: "#F2E0C5" }}>
               {" "}
-              <BiLogOut /> <S.Span>Identifique-se</S.Span>{" "}
+              <S.Div>
+                <S.Span>
+                  <BiLogIn />
+                </S.Span>
+                <S.Span>Identifique-se</S.Span>{" "}
+              </S.Div>
             </Link>
           </>
         )}

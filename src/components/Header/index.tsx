@@ -13,12 +13,12 @@ const Header: React.FC = () => {
       <S.Header>
         <Link href="/">
           {" "}
-          <S.H1>Chocolate shop</S.H1>
+          <S.H1>Chocolate Shop</S.H1>
         </Link>
         <S.InputBox>
           <SearchBar />
         </S.InputBox>
-            <Button/>
+        <Button />
       </S.Header>
     </>
   );
