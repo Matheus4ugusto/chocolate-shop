@@ -1,2 +1,2 @@
-export const moneyFormat = (price: number) =>
-  price.toLocaleString("pt-br", { style: "currency", currency: "BRL" });
+export const moneyFormat = (preco: number) =>
+  preco.toLocaleString("pt-br", { style: "currency", currency: "BRL" });

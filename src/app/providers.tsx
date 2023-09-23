@@ -6,8 +6,7 @@ import GlobalStyles from "@/styles/global";
 import { StyleRegistry } from "styled-jsx";
 
 const Providers = ({ children }: { children: React.ReactNode }) => (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
+  <ThemeProvider theme={theme}>
       {children}
     </ThemeProvider>
 );

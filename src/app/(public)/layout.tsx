@@ -1,10 +1,11 @@
-"use client"
+"use client";
 
 import GlobalStyles from "@/styles/global";
 import Providers from "../providers";
 import StyledComponentsRegistry from "../regystry";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer"
+import Footer from "@/components/Footer";
+
 
 export const metadata = {
   title: "chocolate shop",
@@ -20,11 +21,12 @@ export default function RootLayout({
     <html lang="pt-br">
       <body>
         <StyledComponentsRegistry>
-        <Providers>
-        <Header/>
-          {children}
-          <Footer/>
-        </Providers>
+        <GlobalStyles />
+          <Providers>
+            <Header />
+            {children}
+            <Footer />
+          </Providers>
         </StyledComponentsRegistry>
       </body>
     </html>

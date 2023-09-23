@@ -1,8 +1,12 @@
 import styled from "styled-components";
+import { iBuyButtonProps } from ".";
 
-export const Button = styled.button`
-  color: ${({ theme }) => theme.colors.cream.primary};
+export const Button = styled.button<iBuyButtonProps>`
+  color: ${({ theme, variant }) =>
+    variant == "cream"
+      ? theme.colors.cream.primary
+      : theme.colors.black.primary};
   width: 100%;
   height: 100%;
-  font-size: 1.1rem;
+  font-size: ${({fontSize}) => fontSize}
 `;
