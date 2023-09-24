@@ -17,7 +17,7 @@ export default function Home() {
           title="É novo(a) por aqui?"
           text="Crie a sua conta"
           buttonContent="SignUp"
-          buttonRedirect="LogIn"
+          buttonRedirect="SignUp"
         />
       </BoxRegisterCards>
     </>
