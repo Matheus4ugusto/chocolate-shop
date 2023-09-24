@@ -25,14 +25,16 @@ export default function Product({ params: { id } }: iProduct) {
           />
         </S.Figure>
         <S.Display>
-          <S.H1>{product.nome}</S.H1>
-          <S.P>{moneyFormat(product.preco)}</S.P>
+          <S.DataSection>
+            <S.H1>{product.nome}</S.H1>
+            <S.P>{moneyFormat(product.preco)}</S.P>
+          </S.DataSection>
           <S.DivBuyButton>
             <BuyButton
               text="Comprar"
               variant="cream"
               fontSize="3rem"
-              onClick={() => localStorage.setItem("teste", "funcionou")}
+              onClick={() => localStorage.setItem("isLoged", "true")}
             >
               Comprar
             </BuyButton>

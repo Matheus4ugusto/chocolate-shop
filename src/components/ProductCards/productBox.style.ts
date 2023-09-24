@@ -40,6 +40,8 @@ export const DivButton = styled.div`
   position: absolute;
   bottom: 0.5rem;
   :hover {
+    transition: all 0.3s ease-in-out;
     background-color: ${({ theme }) => theme.colors.brown.tertiary};
+    transform: scale(1.01);
   }
 `;
