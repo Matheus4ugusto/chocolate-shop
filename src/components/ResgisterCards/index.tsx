@@ -5,7 +5,7 @@ export interface IRegisterCardsProps {
   title: string;
   text: string;
   buttonContent: string;
-  buttonRedirect: "LogIn" | "SignIn";
+  buttonRedirect: "SignIn" | "SignUp";
 }
 
 const RegisterCards: React.FC<IRegisterCardsProps> = ({
