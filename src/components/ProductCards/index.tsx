@@ -1,15 +1,9 @@
+import { ProductProps } from "@/types/productTypes";
 import BuyButton from "../BuyButton";
 import * as S from "./productBox.style";
+import { moneyFormat } from "@/utils/moneyFormat";
 
-export interface iProductCardsProps {
-  id: number;
-  nome: string;
-  image_logo: string;
-  path: string;
-  preco: string;
-}
-
-const ProductCards: React.FC<iProductCardsProps> = ({
+const ProductCards: React.FC<ProductProps> = ({
   id,
   nome,
   image_logo,
@@ -18,15 +12,15 @@ const ProductCards: React.FC<iProductCardsProps> = ({
 }) => {
   return (
     <S.Section>
-      <a href={`store/${id}`}>
+      <a href={`product/${id}`}>
         <S.Img src={image_logo} alt={nome} />
       </a>
       <S.DivData>
         <S.Span>{nome}</S.Span>
-        <S.Span id="price">{preco}</S.Span>
+        <S.Span id="price">{moneyFormat(preco)}</S.Span>
       </S.DivData>
       <S.DivButton>
-      <BuyButton />
+        <BuyButton fontSize="1.1rem" variant="cream" >Adicionar ao Carrinho</BuyButton>
       </S.DivButton>
     </S.Section>
   );

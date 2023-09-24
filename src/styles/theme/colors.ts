@@ -19,4 +19,7 @@ export const colors = {
   white: {
     pure: "#FFFFFF",
   },
+  black: {
+    primary: "#000"
+  }
 };

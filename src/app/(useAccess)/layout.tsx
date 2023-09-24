@@ -5,12 +5,7 @@ import Providers from "../providers";
 import StyledComponentsRegistry from "../regystry";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-
-export const metadata = {
-  title: "chocolate shop",
-  description: "A melhor loja de chocolates para devs",
-};
+import HeaderForIdentify from "@/components/HeaderFotIdentify";
 
 export default function RootLayout({
   children,
@@ -21,9 +16,9 @@ export default function RootLayout({
     <html lang="pt-br">
       <body>
         <StyledComponentsRegistry>
-        <GlobalStyles />
           <Providers>
-            <Header />
+            <GlobalStyles />
+            <HeaderForIdentify/>
             {children}
             <Footer />
           </Providers>

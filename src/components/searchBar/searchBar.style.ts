@@ -6,6 +6,7 @@ export const Input = styled.input`
   width: 60%;
   height: 100%;
   font-size: 1.25rem;
+  color: ${({ theme }) => theme.colors.cream.primary};
   &:focus {
     outline: none;
   }

@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
-export const DivFooter = styled.div`
+export const DivFooter = styled.footer`
   display: flex;
-  width: 100vw;
   background-color: ${({ theme }) => theme.colors.brown.primary};
   color: ${({ theme }) => theme.colors.cream.primary};
   justify-content: space-around;
@@ -10,7 +9,6 @@ export const DivFooter = styled.div`
 
 export const H1 = styled.h1`
   font-size: 3rem;
-  width: 19rem;
 `;
 
 export const Description = styled.p`
@@ -19,9 +17,9 @@ export const Description = styled.p`
 `;
 
 export const Ul = styled.ul`
-li{
+  li {
     display: flex;
     align-items: center;
-    margin-bottom: .5rem;
-}
+    margin-bottom: 0.5rem;
+  }
 `;
