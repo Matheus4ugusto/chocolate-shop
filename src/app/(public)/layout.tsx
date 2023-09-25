@@ -7,10 +7,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 
-export const metadata = {
-  title: "chocolate shop",
-  description: "A melhor loja de chocolates para devs",
-};
+// export const metadata = {
+//   title: "chocolate shop",
+//   description: "A melhor loja de chocolates para devs",
+// };
 
 export default function RootLayout({
   children,
