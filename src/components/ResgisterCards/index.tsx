@@ -23,7 +23,7 @@ const RegisterCards: React.FC<IRegisterCardsProps> = ({
         </S.TextSection>
         <S.DivButton>
             <Link href={buttonRedirect}>
-          <S.Button>{buttonContent}</S.Button>
+          {buttonContent}
             </Link>
         </S.DivButton>
       </S.Card>

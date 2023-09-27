@@ -9,6 +9,9 @@ export const DivFooter = styled.footer`
 
 export const H1 = styled.h1`
   font-size: 3rem;
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 export const Description = styled.p`

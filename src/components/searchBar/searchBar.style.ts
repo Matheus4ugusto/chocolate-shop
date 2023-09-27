@@ -24,8 +24,14 @@ export const Button = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.colors.brown.tertiary};
   }
-  @media (min-width: 1440px){
+  @media (max-width: 1440px) {
     width: 10%;
+  }
+  @media (max-width: 1024px) {
+    width: 16%;
+  }
+  @media (max-width: 768px) {
+    width: 25%;
   }
 `;
 

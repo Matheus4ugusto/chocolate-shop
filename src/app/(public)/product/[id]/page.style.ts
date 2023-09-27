@@ -4,9 +4,11 @@ export const Section = styled.section`
   display: flex;
   justify-content: space-around;
   margin: 3rem 3rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
-
-export const Img = styled.img``;
 
 export const Display = styled.section`
   display: flex;
@@ -15,9 +17,16 @@ export const Display = styled.section`
 `;
 
 export const Figure = styled.figure`
-  width: 200px;
-  height: 450px;
+  width: 400px;
+  height: 440px;
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
+
+export const Img = styled.img``;
 
 export const H1 = styled.h1`
   font-size: 2rem;

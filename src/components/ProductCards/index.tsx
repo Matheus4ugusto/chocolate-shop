@@ -13,14 +13,16 @@ const ProductCards: React.FC<ProductProps> = ({
   return (
     <S.Section>
       <a href={`product/${id}`}>
-        <S.Img src={image_logo} alt={nome} />
+        <S.Img src={image_logo} alt={nome} draggable="false" />
       </a>
       <S.DivData>
         <S.Span>{nome}</S.Span>
         <S.Span id="price">{moneyFormat(preco)}</S.Span>
       </S.DivData>
       <S.DivButton>
-        <BuyButton fontSize="1.1rem" variant="cream" >Adicionar ao Carrinho</BuyButton>
+        <BuyButton fontSize="1.1rem" variant="cream">
+          Adicionar ao Carrinho
+        </BuyButton>
       </S.DivButton>
     </S.Section>
   );

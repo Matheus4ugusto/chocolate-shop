@@ -1,7 +1,7 @@
 export const colors = {
   brown: {
-    secondary: "#5D2A0C",
     primary: "#2B1700",
+    secondary: "#5D2A0C",
     tertiary: "#793914",
   },
   cream: {

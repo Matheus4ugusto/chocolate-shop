@@ -13,7 +13,6 @@ export interface iProduct {
 
 export default function Product({ params: { id } }: iProduct) {
   const product = getProductById(Number(id));
-  console.log(product);
   return (
     <>
       <S.Section>
@@ -22,6 +21,7 @@ export default function Product({ params: { id } }: iProduct) {
             title={product.name}
             alt={product.name}
             src={product.image_logo}
+            draggable="false"
           />
         </S.Figure>
         <S.Display>
@@ -34,7 +34,13 @@ export default function Product({ params: { id } }: iProduct) {
               text="Comprar"
               variant="cream"
               fontSize="3rem"
-              onClick={() => localStorage.setItem("isLoged", "true")}
+              onClick={() => {
+                if (typeof window !== "undefined") {
+                  return localStorage.setItem("isLoged", "true");
+                } else {
+                  return null;
+                }
+              }}
             >
               Comprar
             </BuyButton>
