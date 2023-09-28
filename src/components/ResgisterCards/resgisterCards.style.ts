@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Link from "next/link";
 
 export const Card = styled.section`
   display: flex;
@@ -40,10 +41,22 @@ export const Button = styled.button`
 `;
 
 export const DivButton = styled.div`
-  width: 5rem;
+  width: 6rem;
+  background-color: ${({ theme }) => theme.colors.brown.secondary};
+  border-radius: 10px;
+  text-align: center;
   :hover {
     transition: all 0.5s;
     transform: scale(1.05);
     background-color: ${({ theme }) => theme.colors.brown.tertiary};
   }
+`;
+
+export const Div = styled.div`
+  border-radius: 10px;
+`;
+
+export const link = styled(Link)`
+  font-size: 1.5rem;
+  color: ${({ theme }) => theme.colors.cream.primary};
 `;

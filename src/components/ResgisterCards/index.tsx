@@ -1,4 +1,3 @@
-import Link from "next/link";
 import * as S from "./resgisterCards.style";
 
 export interface IRegisterCardsProps {
@@ -22,9 +21,11 @@ const RegisterCards: React.FC<IRegisterCardsProps> = ({
           <S.textBody>{text}</S.textBody>
         </S.TextSection>
         <S.DivButton>
-            <Link href={buttonRedirect}>
+          <S.Div>
+            <S.link href={buttonRedirect}>
           {buttonContent}
-            </Link>
+            </S.link>
+          </S.Div>
         </S.DivButton>
       </S.Card>
     </>

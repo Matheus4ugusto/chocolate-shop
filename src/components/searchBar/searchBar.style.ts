@@ -10,6 +10,10 @@ export const Input = styled.input`
   &:focus {
     outline: none;
   }
+  @media (max-width: 425px) {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
 `;
 
 export const Button = styled.button`
@@ -31,7 +35,10 @@ export const Button = styled.button`
     width: 16%;
   }
   @media (max-width: 768px) {
-    width: 25%;
+    width: 20%;
+  }
+  @media (max-width: 425px) {
+    display: none;
   }
 `;
 
@@ -45,4 +52,22 @@ export const SpanIcon = styled.span`
   background-color: ${({ theme }) => theme.colors.brown.secondary};
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
+  @media (max-width: 425px) {
+    display: none;
+  }
+`;
+
+export const MobileSearchButton = styled.button`
+  display: none;
+  @media (max-width: 425px) {
+    display: flex;
+    color: ${({ theme }) => theme.colors.cream.primary};
+    font-size: 1.5rem;
+    background-color: ${({ theme }) => theme.colors.brown.secondary};
+    height: 100%;
+    align-items: center;
+    border-top-right-radius: 10px ;
+    border-bottom-right-radius: 10px ;
+    
+  }
 `;

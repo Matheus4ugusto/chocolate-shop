@@ -6,3 +6,9 @@ export interface iAuthContext {
   isLoged: boolean;
   logOut: () => void;
 }
+
+export interface iAsideContext {
+  openAside: () => void;
+  closeAside: () => void;
+  aside: boolean;
+}

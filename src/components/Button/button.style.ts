@@ -1,16 +1,17 @@
 import styled from "styled-components";
-import Link from "next/link";
 
-export const Button = styled.button`
-  font-size: 1.25rem;
-  .text {
-    @media (max-width: 1024px) {
-      display: none;
-    }
-    @media (max-width: 768px) {
-      display: none;
-    }
+export const SpanText = styled.span`
+  display: flex;
+  @media (max-width: 1024px) {
+    display: none;
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const SpanIcon = styled.span`
+  display: flex;
   @media (max-width: 1024px) {
     position: absolute;
     right: 2rem;
@@ -23,15 +24,17 @@ export const Button = styled.button`
   }
 `;
 
-export const Span = styled.span`
-  display: flex;
-`;
-
 export const Div = styled.div`
   display: flex;
   align-items: center;
+  font-size: 1.5rem;
+  @media (max-width: 1440px) {
+    font-size: 1rem;
+  }
 `;
 
 export const ButtonDiv = styled.div`
-
-`
+  @media (max-width: 425px) {
+    display: none;
+  }
+`;
