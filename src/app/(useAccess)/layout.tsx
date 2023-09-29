@@ -3,7 +3,6 @@
 import GlobalStyles from "@/styles/global";
 import Providers from "../providers";
 import StyledComponentsRegistry from "../regystry";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeaderForIdentify from "@/components/HeaderFotIdentify";
 
