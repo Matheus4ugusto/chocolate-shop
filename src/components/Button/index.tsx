@@ -6,7 +6,7 @@ import { useAuth } from "@/contexts/AuthContext";
 
 const Button: React.FC = () => {
   const { isLoged } = useAuth();
-  console.log(isLoged);
+
 
   return (
     <>

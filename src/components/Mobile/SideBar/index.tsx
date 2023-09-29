@@ -1,15 +1,22 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import * as S from "./SideBar.style";
 import { useAside } from "@/contexts/AsideContext";
+import Link from "next/link";
+import { BiLogOut, BiLogIn } from "react-icons/bi";
+import { useAuth } from "@/contexts/AuthContext";
+import { useRouter } from "next/navigation";
 
 const SideBar: React.FC = () => {
   const { aside } = useAside();
+  const { isLoged } = useAuth();
+  const { push } = useRouter();
 
   return (
     aside === true && (
-      <S.Div>
+      <div>
         <motion.section
+          onClick={() => push(isLoged ? "/profile" : "/identify")}
           style={{
             position: "fixed",
             zIndex: 998,
@@ -18,6 +25,8 @@ const SideBar: React.FC = () => {
             height: "100%",
             backgroundColor: "#2B1700",
             color: "#F2E0C5",
+            display: "flex",
+            justifyContent: "center",
           }}
           initial={{ x: 200 }}
           animate={{
@@ -29,8 +38,41 @@ const SideBar: React.FC = () => {
           }}
           exit={{ x: 100 }}
           transition={{ duration: 0.4 }}
-        ></motion.section>
-      </S.Div>
+        >
+          <motion.button
+            style={{
+              display: "flex",
+              textAlign: "center",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "#F2E0C5",
+              backgroundColor: "#5D2A0C",
+              marginTop: "8rem",
+              fontSize: "1.5rem",
+              borderRadius: "10px",
+              width: "185px",
+              height: "38px",
+            }}
+          >
+            {isLoged === true ? (
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <BiLogOut />
+                <span className="text">Minha conta</span>
+              </div>
+            ) : (
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <BiLogIn />
+                <span className="text">Identifique-se</span>
+              </div>
+            )}
+          </motion.button>
+        </motion.section>
+      </div>
     )
   );
 };

@@ -14,8 +14,6 @@ const AsideContextProvider = ({ children }: { children: ReactNode }) => {
     setAside(false);
   };
 
-  console.log(aside);
-
   return (
     <AsideContext.Provider value={{ openAside, closeAside, aside }}>
       {children}

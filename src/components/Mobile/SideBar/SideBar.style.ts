@@ -14,7 +14,6 @@ export const Section = styled.section`
   right: 0;
   width: 50%;
   height: 100%;
-  background-color: ${({theme})=> theme.colors.brown.primary};
-  color: ${({theme})=> theme.colors.cream.primary};
-
-`
+  background-color: ${({ theme }) => theme.colors.brown.primary};
+  color: ${({ theme }) => theme.colors.cream.primary};
+`;

@@ -14,6 +14,16 @@ export const Display = styled.section`
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  gap: 3rem;
+  @media (max-width: 425px) {
+    width: 425px;
+    justify-content: unset;
+  }
+  @media (max-width: 375px) {
+    width: 375px;
+    justify-content: unset;
+  }
+  
 `;
 
 export const Figure = styled.figure`
@@ -23,6 +33,9 @@ export const Figure = styled.figure`
     display: flex;
     align-items: center;
     justify-content: center;
+  };
+  @media(max-width: 375px){
+    transform: scale(0.8)
   }
 `;
 
@@ -44,8 +57,27 @@ export const DivBuyButton = styled.div`
     background-color: ${({ theme }) => theme.colors.brown.tertiary};
     transform: scale(1.01);
   }
+  @media (max-width: 425px) {
+    display: flex;
+    width: 400px;
+    margin: auto;
+  }
+  @media (max-width: 375px) {
+    display: flex;
+    width: 350px;
+  }
 `;
 
 export const DataSection = styled.section`
-  gap: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  @media (max-width: 425px) {
+    width: 400px ;
+    margin-left: 10px;
+  }
+  @media (max-width: 375px) {
+    width: 360px ;
+    margin-left: 10px;
+  }
 `;
