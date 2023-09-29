@@ -1,11 +1,14 @@
-
-
-import { ReactNode, createContext, useContext, useEffect } from "react";
-import { iAuthContext } from "./../types/context";
-import { useState } from "react";
-import { iSignIn, iUser } from "@/types/userAccess";
-import { useRouter } from "next/router";
 import { login } from "@/services/login.service";
+import { iAuthContext } from "@/types/context";
+import { iSignIn, iSignUp, iUser } from "@/types/userAccess";
+import { useRouter } from "next/navigation";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 const AuthContext = createContext<iAuthContext>({} as iAuthContext);
 
@@ -24,25 +27,30 @@ const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 
       localStorage.setItem("isLoged", "true");
 
-      const data = login(values);
+      const response = login(values);
 
-      setUser(data);
-      localStorage.setItem("user", JSON.stringify(data));
+      setUser(response);
+      localStorage.setItem("user", JSON.stringify(response));
       setIsLoged(true);
-      setTimeout(() => push(""), 1000);
+      setTimeout(() => push("/"), 4000);
     });
   };
 
   useEffect(() => {
-    const userIsTrue = localStorage.getItem("user");
-    userIsTrue && setUser(JSON.parse(userIsTrue));
+    const hasUser = localStorage.getItem("user");
+    if (hasUser) {
+      setUser(JSON.parse(hasUser));
+    }
   }, []);
 
   const logOut = () => {
     setUser({} as iUser);
     setIsLoged(false);
-    localStorage.clear;
+    localStorage.setItem("isLoged", "false");
+    localStorage.setItem("user", "{}");
   };
+
+  const signUp = (values: iSignUp) => {};
 
   return (
     <AuthContext.Provider value={{ signIn, user, isLoged, logOut }}>

@@ -5,12 +5,12 @@ import Providers from "../providers";
 import StyledComponentsRegistry from "../regystry";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SideBar from "@/components/Mobile/SideBar";
 
-
-export const metadata = {
-  title: "chocolate shop",
-  description: "A melhor loja de chocolates para devs",
-};
+// export const metadata = {
+//   title: "chocolate shop",
+//   description: "A melhor loja de chocolates para devs",
+// };
 
 export default function RootLayout({
   children,
@@ -21,11 +21,12 @@ export default function RootLayout({
     <html lang="pt-br">
       <body>
         <StyledComponentsRegistry>
-        <GlobalStyles />
+          <GlobalStyles />
           <Providers>
-            <Header />
-            {children}
-            <Footer />
+            <SideBar/>
+              <Header />
+              <main>{children}</main>
+              <Footer />
           </Providers>
         </StyledComponentsRegistry>
       </body>

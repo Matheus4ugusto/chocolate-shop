@@ -5,6 +5,7 @@ import SearchBar from "../searchBar";
 import * as S from "./header.style";
 import { useAuth } from "@/contexts/AuthContext";
 import Button from "../Button";
+import SideBarButton from "../Mobile/SideBarButton";
 
 const Header: React.FC = () => {
   const { isLoged, user, logOut } = useAuth();
@@ -19,6 +20,7 @@ const Header: React.FC = () => {
           <SearchBar />
         </S.InputBox>
         <Button />
+        <SideBarButton/>
       </S.Header>
     </>
   );

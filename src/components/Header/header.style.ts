@@ -12,6 +12,11 @@ export const H1 = styled.h1`
   color: ${({ theme }) => theme.colors.cream.primary};
   font-size: 3rem;
   margin: 0 2rem;
+  @media (max-width: 1024px){
+    margin: 0 0 0 .5rem;
+    font-size: 2rem;
+  }
+
 `;
 
 export const InputBox = styled.div`
@@ -20,7 +25,3 @@ export const InputBox = styled.div`
   width: 60%;
   height: 2rem;
 `;
-
-export const RegisterDiv = styled.div`
-
-`

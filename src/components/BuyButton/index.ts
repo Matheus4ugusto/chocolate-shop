@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import * as S from "./buyButton.style";
 
 export interface iBuyButtonProps {
   variant?: "cream" | "black";

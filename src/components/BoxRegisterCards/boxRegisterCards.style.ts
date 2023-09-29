@@ -9,4 +9,9 @@ export const Section = styled.section`
     transition: all 0.5s;
     transform: scale(1.05);
   }
+  @media (max-width: 425px) {
+    margin: 2rem 0;
+    flex-direction: column;
+    align-items: center;
+  }
 `;

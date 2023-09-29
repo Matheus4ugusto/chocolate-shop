@@ -4,7 +4,7 @@ export const Section = styled.section`
   display: flex;
   flex-direction: column;
   width: 390px;
-  height: 500px;
+  height: 490px;
   justify-content: center;
   align-items: center;
   margin-left: 1rem;

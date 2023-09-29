@@ -9,6 +9,10 @@ const SearchBar: React.FC = () => {
       </S.SpanIcon>
       <S.Input placeholder="Pesquise aqui..." />
       <S.Button type="submit">Pesquisar</S.Button>
+      <S.MobileSearchButton>
+        {" "}
+        <AiOutlineSearch />{" "}
+      </S.MobileSearchButton>
     </>
   );
 };

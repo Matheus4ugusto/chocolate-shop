@@ -2,13 +2,15 @@
 
 import { ThemeProvider } from "styled-components";
 import theme from "@/styles/theme";
-import GlobalStyles from "@/styles/global";
-import { StyleRegistry } from "styled-jsx";
+import AuthContextProvider from "@/contexts/AuthContext";
+import AsideContextProvider from "@/contexts/AsideContext";
 
 const Providers = ({ children }: { children: React.ReactNode }) => (
   <ThemeProvider theme={theme}>
-      {children}
-    </ThemeProvider>
+    <AuthContextProvider>
+      <AsideContextProvider>{children}</AsideContextProvider>
+    </AuthContextProvider>
+  </ThemeProvider>
 );
 
 export default Providers;
