@@ -3,7 +3,7 @@
 import BoxRegisterCards from "@/components/BoxRegisterCards";
 import RegisterCards from "@/components/ResgisterCards";
 
-export default function Home() {
+export default function Identify() {
   return (
     <>
       <BoxRegisterCards>
@@ -11,13 +11,13 @@ export default function Home() {
           title="Já possui uma conta?"
           text="Faça o Login"
           buttonContent="SignIn"
-          buttonRedirect="SignIn"
+          buttonRedirect="signIn"
         />
         <RegisterCards
           title="É novo(a) por aqui?"
           text="Crie a sua conta"
           buttonContent="SignUp"
-          buttonRedirect="SignUp"
+          buttonRedirect="signUp"
         />
       </BoxRegisterCards>
     </>
