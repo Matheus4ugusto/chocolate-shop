@@ -34,13 +34,13 @@ export default function Product({ params: { id } }: iProduct) {
               text="Comprar"
               variant="cream"
               fontSize="3rem"
-              onClick={() => {
-                if (typeof window !== "undefined") {
-                  return localStorage.setItem("isLoged", "true");
-                } else {
-                  return null;
-                }
-              }}
+              // onClick={() => {
+              //   if (typeof window !== "undefined") {
+              //     return localStorage.setItem("isLoged", "true");
+              //   } else {
+              //     return null;
+              //   }
+              // }}
             >
               Comprar
             </BuyButton>
