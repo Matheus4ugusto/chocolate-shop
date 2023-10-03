@@ -23,10 +23,10 @@ export default function RootLayout({
         <StyledComponentsRegistry>
           <GlobalStyles />
           <Providers>
-            <SideBar/>
-              <Header />
-              <main>{children}</main>
-              <Footer />
+            <SideBar />
+            <Header />
+            <main>{children}</main>
+            <Footer />
           </Providers>
         </StyledComponentsRegistry>
       </body>

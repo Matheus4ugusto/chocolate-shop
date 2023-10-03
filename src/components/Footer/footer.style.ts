@@ -12,6 +12,8 @@ export const DivFooter = styled.footer`
     align-items: center;
     gap: 1rem;
   }
+
+
 `;
 
 export const H1 = styled.h1`
