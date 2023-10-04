@@ -1,11 +1,12 @@
+import { ReactNode } from "react";
+import * as S from "./form.style";
 import { useAuth } from "@/contexts/AuthContext";
+import { useForm } from "react-hook-form";
 import { iSignIn } from "@/types/userAccess";
 import { LoginValidation } from "@/validations/userAccess.validation";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
-import * as S from "./signIn__Inputs.style";
 
-const SignIn__Inputs: React.FC = () => {
+const FormSignIn: React.FC = () => {
   const { signIn } = useAuth();
 
   const {
@@ -17,12 +18,11 @@ const SignIn__Inputs: React.FC = () => {
   });
 
   return (
-<>
+    <S.Form onSubmit={handleSubmit(signIn)}>
       <S.Input
         type="email"
         id="emailInput"
         placeholder="Insira o seu Email aqui..."
-        required
         {...register("email")}
       />
       <small>{errors?.email?.message}</small>
@@ -30,11 +30,12 @@ const SignIn__Inputs: React.FC = () => {
         type="password"
         id="passwordInput"
         placeholder="Insira a sua senha aqui..."
-        required
+        {...register("password")}
       />
       <small>{errors?.password?.message}</small>
-</>
+      <S.SubmitButton type="submit">Entrar</S.SubmitButton>
+    </S.Form>
   );
 };
 
-export default SignIn__Inputs;
+export default FormSignIn;

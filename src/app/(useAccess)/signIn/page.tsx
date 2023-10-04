@@ -1,7 +1,6 @@
 "use client";
 
-import Form from "@/components/Form";
-import SignIn__Inputs from "@/components/signIn__Inputs";
+import FormSignIn from "@/components/FormSignIn";
 
 export default function signIn() {
   return (
@@ -13,9 +12,7 @@ export default function signIn() {
         justifyContent: "center",
       }}
     >
-      <Form>
-        <SignIn__Inputs />
-      </Form>
+      <FormSignIn />
     </main>
   );
 }
