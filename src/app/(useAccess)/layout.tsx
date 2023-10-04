@@ -17,7 +17,7 @@ export default function RootLayout({
         <StyledComponentsRegistry>
           <Providers>
             <GlobalStyles />
-            <HeaderForIdentify/>
+            <HeaderForIdentify />
             {children}
             <Footer />
           </Providers>
