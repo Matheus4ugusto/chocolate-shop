@@ -16,7 +16,6 @@ const SideBar: React.FC = () => {
     aside === true && (
       <div>
         <motion.section
-          onClick={() => push(isLoged ? "/profile" : "/identify")}
           style={{
             position: "fixed",
             zIndex: 998,
@@ -40,6 +39,7 @@ const SideBar: React.FC = () => {
           transition={{ duration: 0.4 }}
         >
           <motion.button
+            onClick={() => push(isLoged ? "/profile" : "/identify")}
             style={{
               display: "flex",
               textAlign: "center",
