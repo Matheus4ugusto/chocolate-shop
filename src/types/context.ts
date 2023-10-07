@@ -1,3 +1,4 @@
+import { ChangeEvent } from "react";
 import { iSignIn, iUser } from "./userAccess";
 
 export interface iAuthContext {
@@ -16,4 +17,9 @@ export interface iAsideContext {
 export interface iSwitchUserDataContext {
   edit: () => void;
   editable: boolean;
+  saveEdit: () => void;
+  handleNameInputChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  handleEmailInputChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  nameInputValue: any;
+  emailInputValue: any;
 }

@@ -10,15 +10,15 @@ export const Section = styled.section`
   border-radius: 10px;
   justify-content: center;
   align-items: center;
-`;
-
-export const P = styled.p`
-  font-size: 1.5rem;
+  flex-direction: column;
+  gap: 1rem;
 `;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  gap: .7rem;
+  font-size: 1.5rem;
 `;
 export const Input = styled.input`
   padding-left: 1rem;

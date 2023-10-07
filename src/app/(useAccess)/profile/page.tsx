@@ -7,7 +7,16 @@ import { useSwitchUserData } from "@/contexts/SwitchUserDataContext";
 
 export default function Profile() {
   const { user } = useAuth();
-  const { editable } = useSwitchUserData();
+  const {
+    editable,
+    handleEmailInputChange,
+    handleNameInputChange,
+    nameInputValue,
+    emailInputValue,
+  } = useSwitchUserData();
+
+  console.log(nameInputValue, emailInputValue);
+
   return (
     <S.Section>
       <S.Form>
@@ -17,6 +26,9 @@ export default function Profile() {
           placeholder={user?.name}
           disabled={editable}
           id="name"
+          value={nameInputValue}
+          onChange={handleNameInputChange}
+          required
         />
         <label htmlFor="email">Email: </label>
         <S.Input
@@ -24,6 +36,9 @@ export default function Profile() {
           placeholder={user?.email}
           disabled={editable}
           id="email"
+          value={emailInputValue}
+          onChange={handleEmailInputChange}
+          required
         />
       </S.Form>
       <UserDataButton />
