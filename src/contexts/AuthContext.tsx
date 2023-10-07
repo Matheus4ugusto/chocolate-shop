@@ -48,6 +48,7 @@ const AuthContextProvider = ({ children }: { children: ReactNode }) => {
     setIsLoged(false);
     localStorage.setItem("isLoged", "false");
     localStorage.setItem("user", "{}");
+    push("/")
   };
 
   const signUp = (values: iSignUp) => {};
