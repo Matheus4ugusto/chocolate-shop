@@ -12,3 +12,8 @@ export interface iAsideContext {
   closeAside: () => void;
   aside: boolean;
 }
+
+export interface iSwitchUserDataContext {
+  edit: () => void;
+  editable: boolean;
+}
