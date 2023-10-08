@@ -10,7 +10,7 @@ const ProductCounterContextProvider = ({
 }: {
   children: ReactNode;
 }) => {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(1);
 
   const increase = () => {
     setAmount(amount + 1);
@@ -21,7 +21,9 @@ const ProductCounterContextProvider = ({
   };
 
   return (
-    <ProductCounterContext.Provider value={{ amount, increase, decrease, setAmount }}>
+    <ProductCounterContext.Provider
+      value={{ amount, increase, decrease, setAmount }}
+    >
       {children}
     </ProductCounterContext.Provider>
   );

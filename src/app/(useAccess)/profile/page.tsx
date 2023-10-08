@@ -16,8 +16,6 @@ export default function Profile() {
     emailInputValue,
   } = useSwitchUserData();
 
-  console.log(nameInputValue, emailInputValue);
-
   return (
     <S.Section>
       <S.Div>

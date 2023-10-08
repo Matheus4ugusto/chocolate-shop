@@ -8,17 +8,16 @@ import SwitchUserDataContextProvider from "@/contexts/SwitchUserDataContext";
 import CartContextProvider from "@/contexts/CartContext";
 import ProductCounterContextProvider from "@/contexts/ProductCounterContext";
 
-
 const Providers = ({ children }: { children: React.ReactNode }) => (
   <ThemeProvider theme={theme}>
     <AuthContextProvider>
       <SwitchUserDataContextProvider>
-      <AsideContextProvider>
-        <CartContextProvider>
+        <AsideContextProvider>
           <ProductCounterContextProvider>
-            {children}
+            <CartContextProvider>
+              {children}
+              </CartContextProvider>
           </ProductCounterContextProvider>
-        </CartContextProvider>
         </AsideContextProvider>
       </SwitchUserDataContextProvider>
     </AuthContextProvider>
