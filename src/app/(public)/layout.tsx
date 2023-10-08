@@ -6,6 +6,7 @@ import StyledComponentsRegistry from "../regystry";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SideBar from "@/components/Mobile/SideBar";
+import CartAside from "@/components/CartAside";
 
 // export const metadata = {
 //   title: "chocolate shop",
@@ -24,8 +25,14 @@ export default function RootLayout({
           <GlobalStyles />
           <Providers>
             <SideBar />
+<<<<<<< HEAD
             
             {children}
+=======
+            <CartAside/>
+            <Header />
+            <main>{children}</main>
+>>>>>>> 2eb2a8f907d1c86e679fa115a46b8577eb5221e0
             <Footer />
           </Providers>
         </StyledComponentsRegistry>

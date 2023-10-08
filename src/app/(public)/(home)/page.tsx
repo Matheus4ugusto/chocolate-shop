@@ -10,13 +10,13 @@ import { products } from "@/utils/products";
 export default function Home() {
   return (
     <>
-        <ProductSection>
-          <ProductsBox>
-            {products.map((item: ProductProps) => (
-              <ProductCards key={item.id} {...item} />
-            ))}
-          </ProductsBox>
-        </ProductSection>
+      <ProductSection>
+        <ProductsBox>
+          {products.map((item: ProductProps) => (
+            <ProductCards key={item.id} {...item} />
+          ))}
+        </ProductsBox>
+      </ProductSection>
     </>
   );
 }
