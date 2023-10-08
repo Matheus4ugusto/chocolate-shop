@@ -4,6 +4,8 @@ import * as S from "./page.style";
 import { getProductById } from "@/services/product.service";
 import { moneyFormat } from "@/utils/moneyFormat";
 import BuyButton from "@/components/BuyButton";
+import { useCounter } from "@/contexts/ProductCounterContext";
+import Counter from "@/components/Counter";
 
 export interface iProduct {
   params: {
@@ -13,6 +15,9 @@ export interface iProduct {
 
 export default function Product({ params: { id } }: iProduct) {
   const product = getProductById(Number(id));
+  const { amount, increase } = useCounter();
+  console.log(amount);
+  
   return (
     <>
       <S.Section>
@@ -34,16 +39,11 @@ export default function Product({ params: { id } }: iProduct) {
               text="Comprar"
               variant="cream"
               fontSize="3rem"
-              // onClick={() => {
-              //   if (typeof window !== "undefined") {
-              //     return localStorage.setItem("isLoged", "true");
-              //   } else {
-              //     return null;
-              //   }
-              // }}
+              onClick={ increase }
             >
               Comprar
             </BuyButton>
+            <Counter/>
           </S.DivBuyButton>
         </S.Display>
       </S.Section>

@@ -23,3 +23,16 @@ export interface iSwitchUserDataContext {
   nameInputValue: any;
   emailInputValue: any;
 }
+
+export interface iCartContext {
+  openAside: () => void;
+  closeAside: () => void;
+  aside: boolean;
+}
+
+export interface iProductCounterContext {
+  increase: () => void;
+  decrease: () => void;
+  amount: number;
+  setAmount: any
+}
