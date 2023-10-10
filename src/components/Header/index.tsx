@@ -3,12 +3,15 @@
 import Link from "next/link";
 import SearchBar from "../searchBar";
 import * as S from "./header.style";
-import { useAuth } from "@/contexts/AuthContext";
+import { useCart } from "@/contexts/CartContext";
 import Button from "../Button";
 import SideBarButton from "../Mobile/SideBarButton";
+import { PiShoppingCartDuotone } from "react-icons/pi";
+import { AiOutlineCloseCircle } from "react-icons/ai";
+import CartButton from "../CartButton";
 
 const Header: React.FC = () => {
-  const { isLoged, user, logOut } = useAuth();
+  const { openAsideCart, asideCart, closeAsideCart } = useCart();
   return (
     <>
       <S.Header>
@@ -20,7 +23,8 @@ const Header: React.FC = () => {
           <SearchBar />
         </S.InputBox>
         <Button />
-        <SideBarButton/>
+    <CartButton/>
+        <SideBarButton />
       </S.Header>
     </>
   );

@@ -1,5 +1,6 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import { iSignIn, iUser } from "./userAccess";
+import { iCartProduct} from "./productTypes";
 
 export interface iAuthContext {
   signIn: (values: iSignIn) => void;
@@ -9,9 +10,9 @@ export interface iAuthContext {
 }
 
 export interface iAsideContext {
-  openAside: () => void;
-  closeAside: () => void;
-  aside: boolean;
+  openAsideMobile: () => void;
+  closeAsideMobile: () => void;
+  asideMobile: boolean;
 }
 
 export interface iSwitchUserDataContext {
@@ -22,4 +23,19 @@ export interface iSwitchUserDataContext {
   handleEmailInputChange: (event: ChangeEvent<HTMLInputElement>) => void;
   nameInputValue: any;
   emailInputValue: any;
+}
+
+export interface iCartContext {
+  openAsideCart: () => void;
+  closeAsideCart: () => void;
+  asideCart: boolean;
+  buy: ({ id }: { id: number }, values: iCartProduct ) => void;
+  total: number
+}
+
+export interface iProductCounterContext {
+  increase: () => void;
+  decrease: () => void;
+  amount: number;
+  setAmount: Dispatch<SetStateAction<number>>;
 }

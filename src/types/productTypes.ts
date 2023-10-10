@@ -5,3 +5,7 @@ export interface ProductProps {
   path: string;
   preco: number;
 }
+
+export interface iCartProduct extends ProductProps {
+  amount: number;
+}

@@ -39,7 +39,7 @@ const SwitchUserDataContextProvider = ({
     change.email = emailInputValue;
     const sendChange = JSON.stringify(change);
     localStorage.setItem("user", sendChange);
-    console.log(getUser);
+
     location.reload();
   };
 

@@ -51,6 +51,7 @@ export const P = styled.p`
 
 export const DivBuyButton = styled.div`
   width: 500px;
+  height: 85px;
   background-color: ${({ theme }) => theme.colors.brown.primary};
   :hover {
     transition: all 0.3s ease-in-out;
@@ -81,3 +82,9 @@ export const DataSection = styled.section`
     margin-left: 10px;
   }
 `;
+
+export const Div = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`
