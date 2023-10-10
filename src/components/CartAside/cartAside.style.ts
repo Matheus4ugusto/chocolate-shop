@@ -14,4 +14,7 @@ export const Aside = styled.aside`
   width: 20%;
   height: 100%;
   background-color: ${({ theme }) => theme.colors.brown.primary};
+  @media(max-width: 425px){
+    width: 50%
+  };
 `;

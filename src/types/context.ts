@@ -10,9 +10,9 @@ export interface iAuthContext {
 }
 
 export interface iAsideContext {
-  openAside: () => void;
-  closeAside: () => void;
-  aside: boolean;
+  openAsideMobile: () => void;
+  closeAsideMobile: () => void;
+  asideMobile: boolean;
 }
 
 export interface iSwitchUserDataContext {
@@ -26,9 +26,9 @@ export interface iSwitchUserDataContext {
 }
 
 export interface iCartContext {
-  openAside: () => void;
-  closeAside: () => void;
-  aside: boolean;
+  openAsideCart: () => void;
+  closeAsideCart: () => void;
+  asideCart: boolean;
   buy: ({ id }: { id: number }, values: iCartProduct ) => void;
   total: number
 }

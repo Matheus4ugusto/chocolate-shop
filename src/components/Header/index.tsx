@@ -8,9 +8,10 @@ import Button from "../Button";
 import SideBarButton from "../Mobile/SideBarButton";
 import { PiShoppingCartDuotone } from "react-icons/pi";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import CartButton from "../CartButton";
 
 const Header: React.FC = () => {
-  const { openAside, aside, closeAside } = useCart();
+  const { openAsideCart, asideCart, closeAsideCart } = useCart();
   return (
     <>
       <S.Header>
@@ -22,15 +23,7 @@ const Header: React.FC = () => {
           <SearchBar />
         </S.InputBox>
         <Button />
-        {!aside ? (
-          <S.Button onClick={openAside}>
-            <PiShoppingCartDuotone />
-          </S.Button>
-        ) : (
-          <S.Button onClick={closeAside}>
-            <AiOutlineCloseCircle />
-          </S.Button>
-        )}
+    <CartButton/>
         <SideBarButton />
       </S.Header>
     </>

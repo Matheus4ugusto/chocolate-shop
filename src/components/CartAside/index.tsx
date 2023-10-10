@@ -2,9 +2,9 @@ import * as S from "./cartAside.style";
 import { useCart } from "@/contexts/CartContext";
 
 const CartAside: React.FC = () => {
-  const { aside } = useCart();
+  const { asideCart } = useCart();
 
-  return aside === true &&  (
+  return asideCart === true &&  (
     <S.Blur>
       <S.Aside>
         <h1>Olá, Mundo!</h1>

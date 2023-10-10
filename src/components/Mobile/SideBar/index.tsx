@@ -6,17 +6,19 @@ import Link from "next/link";
 import { BiLogOut, BiLogIn } from "react-icons/bi";
 import { useAuth } from "@/contexts/AuthContext";
 import { useRouter } from "next/navigation";
+import { useCart } from "@/contexts/CartContext";
+import { PiShoppingCartDuotone } from "react-icons/pi";
 
 const SideBar: React.FC = () => {
-  const { aside } = useAside();
+  const { asideMobile, closeAsideMobile } = useAside();
   const { isLoged } = useAuth();
   const { push } = useRouter();
+  const {asideCart, openAsideCart} = useCart()
 
   return (
-    aside === true && (
+    asideMobile === true && (
       <div>
         <motion.section
-          onClick={() => push(isLoged ? "/profile" : "/identify")}
           style={{
             position: "fixed",
             zIndex: 998,
@@ -25,8 +27,10 @@ const SideBar: React.FC = () => {
             height: "100%",
             backgroundColor: "#2B1700",
             color: "#F2E0C5",
-            display: "flex",
-            justifyContent: "center",
+            display: ` ${ !asideCart ? "flex" : "none"} `, 
+            flexDirection: "column",
+            alignItems: "center",
+            
           }}
           initial={{ x: 200 }}
           animate={{
@@ -40,6 +44,7 @@ const SideBar: React.FC = () => {
           transition={{ duration: 0.4 }}
         >
           <motion.button
+          onClick={() => push(isLoged ? "/profile" : "/identify")}
             style={{
               display: "flex",
               textAlign: "center",
@@ -70,6 +75,25 @@ const SideBar: React.FC = () => {
                 <span className="text">Identifique-se</span>
               </div>
             )}
+          </motion.button>
+          <motion.button
+            onClick={openAsideCart}
+            style={{
+              display: "flex",
+              textAlign: "center",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "#F2E0C5",
+              backgroundColor: "#5D2A0C",
+              marginTop: "1rem",
+              fontSize: "1.5rem",
+              borderRadius: "10px",
+              width: "185px",
+              height: "38px",
+            }}
+          >
+            <PiShoppingCartDuotone />
+              <span className="text">Carrinho</span>
           </motion.button>
         </motion.section>
       </div>

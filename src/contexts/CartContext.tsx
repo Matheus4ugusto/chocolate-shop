@@ -10,18 +10,18 @@ const CartContext = createContext<iCartContext>({} as iCartContext);
 const CartContextProvider = ({ children }: { children: ReactNode }) => {
   const { amount } = useCounter();
 
-  const [aside, setAside] = useState<boolean>(false);
+  const [asideCart, setAsideCart] = useState<boolean>(false);
   const [total, setTotal] = useState<number>(0);
   const [product, setProduct] = useState<iCartProduct | null>(
     {} as iCartProduct
   );
 
-  const openAside = () => {
-    setAside(true);
+  const openAsideCart = () => {
+    setAsideCart(true);
   };
 
-  const closeAside = () => {
-    setAside(false);
+  const closeAsideCart = () => {
+    setAsideCart(false);
   };
 
   const buy = ({ id }: { id: number }, values: iCartProduct) => {
@@ -34,7 +34,7 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <CartContext.Provider value={{ openAside, closeAside, aside, buy, total }}>
+    <CartContext.Provider value={{ openAsideCart, closeAsideCart, asideCart, buy, total }}>
       {children}
     </CartContext.Provider>
   );

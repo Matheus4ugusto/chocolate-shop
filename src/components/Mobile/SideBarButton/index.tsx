@@ -1,22 +1,26 @@
 import { useAside } from "@/contexts/AsideContext";
 import * as S from "./SideBarButton.style";
 import { AiOutlineCloseCircle, AiOutlineMenu } from "react-icons/ai";
+import { useCart } from "@/contexts/CartContext";
 
 const SideBarButton: React.FC = () => {
-  const { openAside, closeAside, aside } = useAside();
+  const { openAsideMobile, closeAsideMobile, asideMobile } = useAside();
+  const {asideCart, closeAsideCart} = useCart();
+
+  const handleCloseAsides = () => {
+    closeAsideCart(),
+    closeAsideMobile()
+  }
 
   return (
     <>
-      {!aside ? (
-        <S.Button onClick={openAside}>
+      {!asideMobile ? (
+        <S.Button onClick={openAsideMobile}>
           <AiOutlineMenu />
         </S.Button>
       ) : (
-        <S.Button onClick={closeAside}>
+        <S.Button onClick={asideCart ? handleCloseAsides : closeAsideMobile}>
           <AiOutlineCloseCircle />
-          <S.Data>
-            
-          </S.Data>
         </S.Button>
       )}
     </>
