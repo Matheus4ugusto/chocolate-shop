@@ -1,6 +1,6 @@
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import { iSignIn, iUser } from "./userAccess";
-import { iCartProduct} from "./productTypes";
+import { iCartProduct } from "./productTypes";
 
 export interface iAuthContext {
   signIn: (values: iSignIn) => void;
@@ -29,8 +29,9 @@ export interface iCartContext {
   openAsideCart: () => void;
   closeAsideCart: () => void;
   asideCart: boolean;
-  buy: ({ id }: { id: number }, values: iCartProduct ) => void;
-  total: number
+  buy: (values: iCartProduct) => void;
+  cancelBuy: (id: number) => void;
+  total: number;
 }
 
 export interface iProductCounterContext {

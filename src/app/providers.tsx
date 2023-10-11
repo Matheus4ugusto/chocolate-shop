@@ -10,17 +10,15 @@ import ProductCounterContextProvider from "@/contexts/ProductCounterContext";
 
 const Providers = ({ children }: { children: React.ReactNode }) => (
   <ThemeProvider theme={theme}>
-    <AuthContextProvider>
-      <SwitchUserDataContextProvider>
-        <AsideContextProvider>
-          <ProductCounterContextProvider>
-            <CartContextProvider>
-              {children}
-              </CartContextProvider>
-          </ProductCounterContextProvider>
-        </AsideContextProvider>
-      </SwitchUserDataContextProvider>
-    </AuthContextProvider>
+    <ProductCounterContextProvider>
+      <CartContextProvider>
+        <AuthContextProvider>
+          <SwitchUserDataContextProvider>
+            <AsideContextProvider>{children}</AsideContextProvider>
+          </SwitchUserDataContextProvider>
+        </AuthContextProvider>
+      </CartContextProvider>
+    </ProductCounterContextProvider>
   </ThemeProvider>
 );
 
