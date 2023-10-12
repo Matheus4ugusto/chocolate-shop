@@ -26,7 +26,7 @@ export interface iSwitchUserDataContext {
 }
 
 export interface iCartContext {
-  openAsideCart: () => void;
+  openAsideCart: (values: iCartProduct) => void;
   closeAsideCart: () => void;
   asideCart: boolean;
   buy: (values: iCartProduct) => void;
