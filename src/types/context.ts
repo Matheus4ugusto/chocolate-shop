@@ -26,12 +26,13 @@ export interface iSwitchUserDataContext {
 }
 
 export interface iCartContext {
-  openAsideCart: (values: iCartProduct) => void;
+  openAsideCart: () => void;
   closeAsideCart: () => void;
   asideCart: boolean;
   buy: (values: iCartProduct) => void;
   cancelBuy: (id: number) => void;
   total: number;
+  getProducts: Function;
 }
 
 export interface iProductCounterContext {

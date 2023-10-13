@@ -23,7 +23,7 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem(`item${values.id}`, JSON.stringify(handleBuy));
   };
 
-  const openAsideCart = (values: iCartProduct) => {
+  const getProducts = () => {
     let handleData = [];
     for (let i = 0; i < products.length; i++) {
       const productData = JSON.parse(
@@ -31,7 +31,13 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
       );
       handleData.push(productData);
     }
-    console.log(handleData);
+
+    const filteredData = handleData.filter((i) => i !== null);
+    console.log(filteredData);
+    return filteredData;
+  };
+
+  const openAsideCart = () => {
     setAsideCart(true);
   };
 
@@ -48,6 +54,7 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
         buy,
         total,
         cancelBuy,
+        getProducts,
       }}
     >
       {children}
