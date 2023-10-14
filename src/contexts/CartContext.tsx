@@ -18,7 +18,6 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const buy = (values: iCartProduct) => {
-
     let handleBuy = values;
 
     localStorage.setItem(`item${values.id}`, JSON.stringify(handleBuy));
@@ -28,7 +27,9 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
     let handleData = [];
     for (let i = 0; i < products.length; i++) {
       const productData = JSON.parse(
-        localStorage.getItem(`item${i}`) as string
+        typeof window !== "undefined"
+          ? (localStorage.getItem(`item${i}`) as string)
+          : "{}"
       );
       handleData.push(productData);
     }
@@ -43,8 +44,8 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const cancelBuy = () => {
-    for(let i = 0; i < products.length; i++){
-      localStorage.removeItem(`item${i}`)
+    for (let i = 0; i < products.length; i++) {
+      localStorage.removeItem(`item${i}`);
     }
   };
 
