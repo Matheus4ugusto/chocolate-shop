@@ -18,7 +18,8 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const buy = (values: iCartProduct) => {
-    let handleBuy = { index: values.id, amount: values.amount };
+
+    let handleBuy = values;
 
     localStorage.setItem(`item${values.id}`, JSON.stringify(handleBuy));
   };
@@ -41,8 +42,10 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
     setAsideCart(true);
   };
 
-  const cancelBuy = (id: number) => {
-    console.log(buy);
+  const cancelBuy = () => {
+    for(let i = 0; i < products.length; i++){
+      localStorage.removeItem(`item${i}`)
+    }
   };
 
   return (
