@@ -29,7 +29,7 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
       const productData = JSON.parse(
         typeof window !== "undefined"
           ? (localStorage.getItem(`item${i}`) as string)
-          : ""
+          : "{}"
       );
       handleData.push(productData);
     }
