@@ -30,8 +30,9 @@ export interface iCartContext {
   closeAsideCart: () => void;
   asideCart: boolean;
   buy: (values: iCartProduct) => void;
-  cancelBuy: (id: number) => void;
+  cancelBuy: () => void;
   total: number;
+  getProducts: Function;
 }
 
 export interface iProductCounterContext {

@@ -13,37 +13,39 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
   const { amount } = useCounter();
   const [total, setTotal] = useState<number>(0);
 
-  const openAsideCart = () => {
-    setAsideCart(true);
-  };
-
   const closeAsideCart = () => {
     setAsideCart(false);
   };
 
   const buy = (values: iCartProduct) => {
-    const hasProduct = product.findIndex((item) => item.id === values.id);
 
-    let productsCopy = [...product];
+    let handleBuy = values;
 
-    if (hasProduct >= 0) {
-      productsCopy[hasProduct].amount += 1;
-      setProduct(productsCopy);
-    } else {
-      productsCopy = [...product, values];
-    }
-    console.log(product);
-    
-    setProduct(productsCopy);
-    localStorage.setItem("cart", JSON.stringify(productsCopy));
-
-    // setTotal(amount * product[values.id].preco);
-    console.log([...product, values]);
-    console.log(values.id);
+    localStorage.setItem(`item${values.id}`, JSON.stringify(handleBuy));
   };
 
-  const cancelBuy = (id: number) => {
-    console.log(buy);
+  const getProducts = () => {
+    let handleData = [];
+    for (let i = 0; i < products.length; i++) {
+      const productData = JSON.parse(
+        localStorage.getItem(`item${i}`) as string
+      );
+      handleData.push(productData);
+    }
+
+    const filteredData = handleData.filter((i) => i !== null);
+    console.log(filteredData);
+    return filteredData;
+  };
+
+  const openAsideCart = () => {
+    setAsideCart(true);
+  };
+
+  const cancelBuy = () => {
+    for(let i = 0; i < products.length; i++){
+      localStorage.removeItem(`item${i}`)
+    }
   };
 
   return (
@@ -55,6 +57,7 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
         buy,
         total,
         cancelBuy,
+        getProducts,
       }}
     >
       {children}
