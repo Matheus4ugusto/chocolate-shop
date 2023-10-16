@@ -23,7 +23,7 @@ const CartAside: React.FC = () => {
   console.log(cartProducts);
 
   return (
-    asideCart === true && (
+    asideCart && (
       <S.Blur>
         <S.Aside>
           <S.Div>
@@ -36,7 +36,7 @@ const CartAside: React.FC = () => {
                 </span>
               </S.ProductDiv>
             ))}
-            {cartProducts.length !== 0 ? (
+            {cartProducts.length ? (
               <>
                 <S.Button onClick={handleClearCart}>Limpar o carrinho</S.Button>
                 <S.DivButton>
