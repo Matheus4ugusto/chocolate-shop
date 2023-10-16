@@ -26,21 +26,25 @@ const FormSignUp: React.FC = () => {
         type="text"
         placeholder="Insira o seu nome aqui..."
         ref={handleNome}
+        required
       />
       <S.Input
         type="email"
         placeholder="Insira o seu email aqui..."
         ref={handleEmail}
+        required
       />
       <S.Input
         type="password"
         placeholder="Insira a sua senha aqui..."
         ref={handleSenha}
+        required
       />
       <S.Input
         type="password"
         placeholder="Confirme a sua senha aqui..."
         ref={handleConfirmarSenha}
+        required
       />
       <S.SubmitButton type="submit">Criar conta</S.SubmitButton>
     </S.Form>
