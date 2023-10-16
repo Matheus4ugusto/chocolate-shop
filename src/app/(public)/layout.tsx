@@ -25,14 +25,9 @@ export default function RootLayout({
           <GlobalStyles />
           <Providers>
             <SideBar />
-<<<<<<< HEAD
-            
-            {children}
-=======
-            <CartAside/>
+            <CartAside />
             <Header />
             <main>{children}</main>
->>>>>>> 2eb2a8f907d1c86e679fa115a46b8577eb5221e0
             <Footer />
           </Providers>
         </StyledComponentsRegistry>

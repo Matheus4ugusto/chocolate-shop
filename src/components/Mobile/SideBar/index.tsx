@@ -44,11 +44,7 @@ const SideBar: React.FC = () => {
           transition={{ duration: 0.4 }}
         >
           <motion.button
-<<<<<<< HEAD
-            onClick={() => push(isLoged ? "/profile" : "/identify")}
-=======
           onClick={() => push(isLoged ? "/profile" : "/identify")}
->>>>>>> 809a8f44ac09a4c1154cef39b479e8d60ddda76f
             style={{
               display: "flex",
               textAlign: "center",

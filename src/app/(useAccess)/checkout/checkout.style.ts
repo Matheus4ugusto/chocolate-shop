@@ -8,6 +8,13 @@ export const Div = styled.div`
   margin: auto 1rem;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  @media(max-width: 768px){
+    width: 70%;
+  }
+  @media(max-width: 425px){
+    margin: auto .5rem;
+  }
+
 `;
 
 export const Section = styled.section`
@@ -16,7 +23,12 @@ export const Section = styled.section`
   flex-wrap: wrap;
   width: 100%;
   justify-content: center;
-  align-items: center
+  align-items: center;
+  @media(max-width: 375px){
+    wrap: nowrap;
+    flex-direction: column;
+    justify-content: start ;
+  }
 `;
 
 export const ProductDiv = styled.div`
@@ -29,6 +41,10 @@ export const ProductDiv = styled.div`
   justify-content: center;
   align-items: center;
   color: ${({theme}) => theme.colors.cream.primary};
+  @media(max-width: 425px){
+    width: 25%;
+    margin-top: 1rem;
+  }
 `;
 
 export const CheckoutSection = styled.section`
@@ -41,6 +57,16 @@ export const CheckoutSection = styled.section`
   font-size: 2rem;
   padding: 1rem;
   margin: auto 0;
+  @media(max-width: 768px){
+    width: 20%;
+    margin-left: 1rem;
+  }
+  @media(max-width: 425px){
+    margin-left: 0;
+    width: 23%;
+    font-size: 1.2rem;
+    padding: .5rem;
+  }
 `;
 
 export const Main = styled.main`
