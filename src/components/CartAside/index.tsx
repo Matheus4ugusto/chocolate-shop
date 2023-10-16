@@ -27,17 +27,17 @@ const CartAside: React.FC = () => {
       <S.Blur>
         <S.Aside>
           <S.Div>
-            {cartProducts.map((products: iCartProduct) => (
-              <S.ProductDiv key={products.id}>
-                <span>{products.nome}</span>
-                <span>Qtd.: {products.amount}</span>
-                <span>
-                  Preço: {moneyFormat(products.preco * products.amount)}
-                </span>
-              </S.ProductDiv>
-            ))}
             {cartProducts.length ? (
               <>
+                {cartProducts.map((products: iCartProduct) => (
+                  <S.ProductDiv key={products.id}>
+                    <span>{products.nome}</span>
+                    <span>Qtd.: {products.amount}</span>
+                    <span>
+                      Preço: {moneyFormat(products.preco * products.amount)}
+                    </span>
+                  </S.ProductDiv>
+                ))}
                 <S.Button onClick={handleClearCart}>Limpar o carrinho</S.Button>
                 <S.DivButton>
                   <S.A href="/checkout">Finalizar compra</S.A>
