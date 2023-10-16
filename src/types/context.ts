@@ -1,18 +1,19 @@
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
-import { iSignIn, iUser } from "./userAccess";
-import { iCartProduct} from "./productTypes";
+import { iSignIn, iSignUp, iUser } from "./userAccess";
+import { iCartProduct } from "./productTypes";
 
 export interface iAuthContext {
   signIn: (values: iSignIn) => void;
   user: iUser | null;
   isLoged: boolean;
   logOut: () => void;
+  signUp: (values: iSignUp) => void;
 }
 
 export interface iAsideContext {
-  openAside: () => void;
-  closeAside: () => void;
-  aside: boolean;
+  openAsideMobile: () => void;
+  closeAsideMobile: () => void;
+  asideMobile: boolean;
 }
 
 export interface iSwitchUserDataContext {
@@ -26,11 +27,14 @@ export interface iSwitchUserDataContext {
 }
 
 export interface iCartContext {
-  openAside: () => void;
-  closeAside: () => void;
-  aside: boolean;
-  buy: ({ id }: { id: number }, values: iCartProduct ) => void;
-  total: number
+  openAsideCart: () => void;
+  closeAsideCart: () => void;
+  asideCart: boolean;
+  buy: (values: iCartProduct) => void;
+  cancelBuy: () => void;
+  total: number;
+  getProducts: Function;
+  totalOfCart: Function;
 }
 
 export interface iProductCounterContext {

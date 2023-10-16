@@ -4,18 +4,18 @@ import { ReactNode, createContext, useContext, useState } from "react";
 const AsideContext = createContext<iAsideContext>({} as iAsideContext); //sempre colocar {} as tipagens como default value
 
 const AsideContextProvider = ({ children }: { children: ReactNode }) => {
-  const [aside, setAside] = useState<boolean>(false);
+  const [asideMobile, setAsideMobile] = useState<boolean>(false);
 
-  const openAside = () => {
-    setAside(true);
+  const openAsideMobile = () => {
+    setAsideMobile(true);
   };
 
-  const closeAside = () => {
-    setAside(false);
+  const closeAsideMobile = () => {
+    setAsideMobile(false);
   };
 
   return (
-    <AsideContext.Provider value={{ openAside, closeAside, aside }}>
+    <AsideContext.Provider value={{ openAsideMobile, closeAsideMobile, asideMobile }}>
       {children}
     </AsideContext.Provider>
   );
