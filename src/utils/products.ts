@@ -1,7 +1,7 @@
 export const products: any = [
   {
     id: 0,
-    preco: 350,
+    preco: 35,
     nome: "Chocolate com mix de castanhas e frutas",
     descricao:
       "Delicie-se com o nosso incrível chocolate misturado com uma variedade de castanhas e frutas. Uma combinação perfeita de doçura e crocância que vai satisfazer todos os seus desejos de chocolate.",
