@@ -15,6 +15,8 @@ export const Display = styled.section`
   justify-content: space-around;
   flex-direction: column;
   gap: 3rem;
+  width: 550px;
+  color: ${({ theme }) => theme.colors.brown.primary};
   @media (max-width: 425px) {
     width: 425px;
     justify-content: unset;
@@ -23,7 +25,6 @@ export const Display = styled.section`
     width: 375px;
     justify-content: unset;
   }
-  
 `;
 
 export const Figure = styled.figure`
@@ -33,9 +34,9 @@ export const Figure = styled.figure`
     display: flex;
     align-items: center;
     justify-content: center;
-  };
-  @media(max-width: 375px){
-    transform: scale(0.8)
+  }
+  @media (max-width: 375px) {
+    transform: scale(0.8);
   }
 `;
 
@@ -43,6 +44,7 @@ export const Img = styled.img``;
 
 export const H1 = styled.h1`
   font-size: 2rem;
+  color: ${({ theme }) => theme.colors.brown.primary};
 `;
 
 export const P = styled.p`
@@ -74,11 +76,11 @@ export const DataSection = styled.section`
   flex-direction: column;
   gap: 1rem;
   @media (max-width: 425px) {
-    width: 400px ;
+    width: 400px;
     margin-left: 10px;
   }
   @media (max-width: 375px) {
-    width: 360px ;
+    width: 360px;
     margin-left: 10px;
   }
 `;
@@ -87,4 +89,5 @@ export const Div = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-`
+`;
+export const Span = styled.span``;

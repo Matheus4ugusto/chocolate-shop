@@ -14,12 +14,11 @@ const ProductCards: React.FC<ProductProps> = ({
   path,
   preco,
 }) => {
-
   const product = getProductById(Number(id));
   const { amount, increase } = useCounter();
   const { buy } = useCart();
   const handleClick: MouseEventHandler<HTMLButtonElement> = () => {
-    buy( {...product, amount: amount});
+    buy({ ...product, amount: amount });
   };
 
   return (
