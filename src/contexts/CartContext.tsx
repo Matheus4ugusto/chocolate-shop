@@ -39,6 +39,30 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
     return filteredData;
   };
 
+  const totalOfCart = () => {
+    let handleData = [];
+    for (let i = 0; i < products.length; i++) {
+      const productData = JSON.parse(
+        typeof window !== "undefined"
+          ? (localStorage.getItem(`item${i}`) as string)
+          : "{}"
+      );
+      handleData.push(productData);
+    }
+
+    const filteredData = handleData.filter((i) => i !== null);
+
+    var sum = 0;
+
+    for (let i = 0; i < filteredData.length; i++) {
+      sum += filteredData[i].preco * filteredData[i].amount;
+    }
+
+    console.log(sum);
+
+    return sum;
+  };
+
   const openAsideCart = () => {
     setAsideCart(true);
   };
@@ -59,6 +83,7 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
         total,
         cancelBuy,
         getProducts,
+        totalOfCart,
       }}
     >
       {children}
