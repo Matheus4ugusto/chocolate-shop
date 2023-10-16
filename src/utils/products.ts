@@ -2,7 +2,7 @@ export const products: any = [
   {
     id: 0,
     preco: 35,
-    nome: "Chocolate com mix de castanhas e frutas",
+    nome: "Chocolate com castanhas e frutas",
     image_logo: "/imgs/chocolate-mixed.png",
     path: "/",
   },

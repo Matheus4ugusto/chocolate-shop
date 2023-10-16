@@ -33,6 +33,7 @@ export interface iCartContext {
   cancelBuy: () => void;
   total: number;
   getProducts: Function;
+  totalOfCart: Function;
 }
 
 export interface iProductCounterContext {
