@@ -45,3 +45,7 @@ export const DivButton = styled.div`
     transform: scale(1.01);
   }
 `;
+
+export const P = styled.p`
+
+`

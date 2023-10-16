@@ -38,6 +38,8 @@ export default function Product({ params: { id } }: iProduct) {
           <S.DataSection>
             <S.H1>{product.nome}</S.H1>
             <S.P>{moneyFormat(product.preco)}</S.P>
+            <S.Span id="grams">{product.gramatura}</S.Span>
+        <S.P>{product.descricao}</S.P>
           </S.DataSection>
           <S.Div>
             <S.DivBuyButton>

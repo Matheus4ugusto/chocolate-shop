@@ -15,6 +15,7 @@ export const Display = styled.section`
   justify-content: space-around;
   flex-direction: column;
   gap: 3rem;
+  width: 550px;
   @media (max-width: 425px) {
     width: 425px;
     justify-content: unset;
@@ -87,4 +88,6 @@ export const Div = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+`
+export const Span = styled.span`
 `
