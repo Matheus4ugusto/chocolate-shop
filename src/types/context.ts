@@ -1,5 +1,5 @@
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
-import { iSignIn, iUser } from "./userAccess";
+import { iSignIn, iSignUp, iUser } from "./userAccess";
 import { iCartProduct } from "./productTypes";
 
 export interface iAuthContext {
@@ -7,6 +7,7 @@ export interface iAuthContext {
   user: iUser | null;
   isLoged: boolean;
   logOut: () => void;
+  signUp: (values: iSignUp) => void;
 }
 
 export interface iAsideContext {
