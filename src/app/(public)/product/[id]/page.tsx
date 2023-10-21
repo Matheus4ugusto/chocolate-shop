@@ -20,7 +20,7 @@ export default function Product({ params: { id } }: iProduct) {
   const { amount, increase } = useCounter();
   const { buy } = useCart();
   const handleClick: MouseEventHandler<HTMLButtonElement> = () => {
-    buy( {...product, amount: amount});
+    buy({ ...product, amount: amount });
   };
 
   return (
@@ -39,7 +39,7 @@ export default function Product({ params: { id } }: iProduct) {
             <S.H1>{product.nome}</S.H1>
             <S.P>{moneyFormat(product.preco)}</S.P>
             <S.Span id="grams">{product.gramatura}</S.Span>
-        <S.P>{product.descricao}</S.P>
+            <S.P>{product.descricao}</S.P>
           </S.DataSection>
           <S.Div>
             <S.DivBuyButton>

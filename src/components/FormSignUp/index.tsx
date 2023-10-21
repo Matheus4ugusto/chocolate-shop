@@ -12,12 +12,12 @@ const FormSignUp: React.FC = () => {
   const handleSignUp = (event: React.FormEvent) => {
     event.preventDefault();
 
-    const name = handleNome.current?.value || "";
+    const nome = handleNome.current?.value || "";
     const email = handleEmail.current?.value || "";
-    const password = handleSenha.current?.value || "";
-    const confirmPassword = handleConfirmarSenha.current?.value || "";
+    const senha = handleSenha.current?.value || "";
+    const confirmacaoSenha = handleConfirmarSenha.current?.value || "";
 
-    signUp({ name, email, password, confirmPassword });
+    signUp({ nome, email, senha, confirmacaoSenha });
   };
 
   return (

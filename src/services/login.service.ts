@@ -8,14 +8,14 @@ export const login = (values: iSignIn) => {
 
     return {
       id: user.id || 0,
-      name: user.name || "usuário teste",
+      nome: user.name || "usuário teste",
       email: values.email,
     };
   }
 
   return {
     id: 0,
-    name: "usuário teste",
+    nome: "usuário teste",
     email: values.email,
   };
 };

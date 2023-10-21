@@ -23,7 +23,7 @@ export default function Profile() {
           <label htmlFor="name">Nome de usuário:</label>
           <S.Input
             type="text"
-            placeholder={user?.name}
+            placeholder={user?.nome}
             disabled={editable}
             id="name"
             value={nameInputValue}
