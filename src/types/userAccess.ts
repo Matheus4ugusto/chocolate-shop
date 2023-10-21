@@ -1,18 +1,18 @@
 export interface iSignUp {
-  name: string;
+  nome: string;
   email: string;
-  password: string;
-  confirmPassword: string;
+  senha: string;
+  confirmacaoSenha: string;
 }
 
 export interface iSignIn {
-  // name: string;
+  nome: string;
   email: string;
   password: string;
 }
 
 export interface iUser {
   id?: number;
-  name: string;
+  nome: string;
   email: string;
 }
