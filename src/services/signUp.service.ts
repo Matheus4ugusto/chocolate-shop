@@ -1,10 +1,9 @@
 import { iSignUp } from "@/types/userAccess";
+import {api} from "@/services/api";
 
-const bancoDeDadosUsuarios: Record<string, iSignUp> = {};
-
-async function registrarUsuario(userData: iSignUp) {
-  bancoDeDadosUsuarios[userData.email] = userData;
-  return { user: userData };
+export const registrarUsuario = async (userData: iSignUp) => {
+  const {data} = await api.post("/register", userData);
+  return data;
 }
 
-export default registrarUsuario;
+

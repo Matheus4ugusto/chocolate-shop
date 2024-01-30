@@ -1,21 +1,8 @@
 import { iSignIn } from "@/types/userAccess";
+import {api} from "@/services/api";
 
-export const login = (values: iSignIn) => {
-  const userData = localStorage.getItem("user");
+export const login = async (values: iSignIn) => {
+  const {data} = await api.post("login", values);
 
-  if (userData) {
-    const user = JSON.parse(userData);
-
-    return {
-      id: user.id || 0,
-      nome: user.name || "usuário teste",
-      email: values.email,
-    };
-  }
-
-  return {
-    id: 0,
-    nome: "usuário teste",
-    email: values.email,
-  };
+  return data
 };

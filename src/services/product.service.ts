@@ -1,5 +1,11 @@
-import { products } from "@/utils/products";
+import {api} from "@/services/api";
 
-export const getProductById = (id: number) => {
-  return products[id];
+export const getProductById = async (id: number) => {
+    const {data} = await api.get("products/" + id)
+    return data;
+};
+
+export const getProducts = async () => {
+    const {data} = await api.get(`products`);
+    return data;
 };
